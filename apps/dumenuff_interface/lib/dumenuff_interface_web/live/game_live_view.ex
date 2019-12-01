@@ -1,7 +1,7 @@
 defmodule DumenuffInterfaceWeb.GameLiveView do
   use Phoenix.LiveView
 
-  alias DumenuffEngine.{Game, GameSupervisor, Decision, Message}
+  alias DumenuffEngine.{Game, Decision, Message}
 
   @pubsub_name :dumenuff
 

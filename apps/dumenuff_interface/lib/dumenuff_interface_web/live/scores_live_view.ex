@@ -1,8 +1,6 @@
 defmodule DumenuffInterfaceWeb.ScoresLiveView do
   use Phoenix.LiveView
 
-  alias DumenuffEngine.{Game, GameSupervisor}
-
   def render(assigns) do
     Phoenix.View.render(DumenuffInterfaceWeb.ScoresView, "show.html", assigns)
   end
@@ -19,13 +17,9 @@ defmodule DumenuffInterfaceWeb.ScoresLiveView do
       Phoenix.PubSub.subscribe(:dumenuff, game_state.registered_name)
       # {:ok, game_state} = Game.get_state(game_pid)
 
-      {:ok, assign(socket,
-          game: game_state,
-        )}
+      {:ok, assign(socket, game: game_state)}
     else
-      {:ok, assign(socket,
-          game: nil,
-        )}
+      {:ok, assign(socket, game: nil)}
     end
   end
 
