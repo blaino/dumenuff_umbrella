@@ -1,3 +1,13 @@
+defmodule Mix.Tasks.UmbrellaNpmInstall do
+  use Mix.Task
+
+  def run(_) do
+    Mix.shell().info("(Umbrella) Running npm install to get rivescript and its dependencies")
+    Mix.shell().cmd("cd apps/dumenuff_bots && npm install")
+  end
+end
+
+
 defmodule DumenuffUmbrella.MixProject do
   use Mix.Project
 
@@ -6,7 +16,8 @@ defmodule DumenuffUmbrella.MixProject do
       apps_path: "apps",
       version: "0.1.0",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      default_task: "UmbrellaNpmInstall",
     ]
   end
 

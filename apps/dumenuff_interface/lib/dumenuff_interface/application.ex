@@ -17,7 +17,7 @@ defmodule DumenuffInterface.Application do
         start: {
           NodeJS,
           :start_link,
-          [[path: "/Users/blainenelson/projects/elixir/dumenuff/dumenuff_bots", pool_size: 4]]
+          [[path: "apps/dumenuff_bots", pool_size: 4]]
         }
       }
     ]

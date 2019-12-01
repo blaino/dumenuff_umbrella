@@ -13,16 +13,23 @@ defmodule DumenuffBots.MixProject do
   def project do
     [
       app: :dumenuff_bots,
-      default_task: "NpmInstall",
+      # default_task: "NpmInstall",
       version: "0.1.0",
       elixir: "~> 1.9",
-      # start_permanent: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
       # deps: deps(),
       # Umbrella
       build_path: "../../_build",
       config_path: "../../config/config.exs",
       lockfile: "../../mix.lock",
-      aliases: aliases()
     ]
   end
+
+  # Run "mix help compile.app" to learn about applications.
+  def application do
+    [
+      extra_applications: [:logger]
+    ]
+  end
+
 end
