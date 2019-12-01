@@ -1,12 +1,12 @@
-defmodule Mix.Tasks.NpmInstall do
-  use Mix.Task
+# defmodule Mix.Tasks.NpmInstall do
+#   use Mix.Task
 
-  def run(_) do
-    Mix.shell().info("Running npm install to get rivescript and its dependencies")
-    Mix.shell().cmd("npm install")
-  end
-end
-
+#   def run(_) do
+#     Mix.shell().info("Running npm install to get rivescript and its dependencies")
+#     Mix.shell().cmd("npm install")
+#   end
+# end
+xo
 defmodule DumenuffBots.MixProject do
   use Mix.Project
 
