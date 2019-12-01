@@ -28,9 +28,10 @@ defmodule DumenuffInterface.UserListTest do
     end)
   end
 
+
   # N has to be a multiple of players_to_start
   test "Add N players start through scores" do
-    sessions = start_sessions(20)
+    sessions = start_sessions(4)
     Enum.each(sessions, fn {session, player} ->
       session
       |> visit("/")
