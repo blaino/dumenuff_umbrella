@@ -11,14 +11,14 @@ defmodule DumenuffInterfaceWeb.GameController do
     live_render(conn, DumenuffInterfaceWeb.GameLiveView, session: session)
   end
 
-  defp check_player(conn, _options) do
-    if conn.assigns.current_player do
-      conn
-    else
-      conn
-      |> put_flash(:error, "You must configure a player to get into a game")
-      |> redirect(to: Routes.lobby_path(conn, :new))
-      |> halt()
-    end
-  end
+  # defp check_player(conn, _options) do
+  #   if conn.assigns.current_player do
+  #     conn
+  #   else
+  #     conn
+  #     |> put_flash(:error, "You must configure a player to get into a game")
+  #     |> redirect(to: Routes.lobby_path(conn, :new))
+  #     |> halt()
+  #   end
+  # end
 end

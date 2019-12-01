@@ -59,14 +59,14 @@ defmodule DumenuffEngine.Game do
   ########
   # Handlers
   #
-  def handle_info(:timeout, state_data), do: {:stop, {:shutdown, :timeout}, state_data}
-
   def terminate({:shutdown, :timeout}, state_data) do
     :ets.delete(:game_state, state_data.player1.name)
     :ok
   end
 
   def terminate(_reason, _state), do: :ok
+
+  def handle_info(:timeout, state_data), do: {:stop, {:shutdown, :timeout}, state_data}
 
   def handle_info({:set_state, name}, _state_data) do
     state_data =
@@ -156,7 +156,7 @@ defmodule DumenuffEngine.Game do
   #
 
   def bot_names(n) do
-    names
+    names()
     |> String.split("\n")
     |> Enum.map(&String.trim/1)
     |> Enum.take_random(n)

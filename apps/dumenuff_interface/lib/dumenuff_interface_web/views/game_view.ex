@@ -24,7 +24,7 @@ defmodule DumenuffInterfaceWeb.GameView do
     end
   end
 
-  def decision_checked(game_state, player, opponent, decision)
+  def decision_checked(_game_state, player, opponent, _decision)
       when is_nil(player) or is_nil(opponent),
       do: nil
 
@@ -33,7 +33,7 @@ defmodule DumenuffInterfaceWeb.GameView do
     if decisions[opponent] == decision, do: "checked"
   end
 
-  def messages(game_state, player, opponent) when is_nil(player) or is_nil(opponent), do: []
+  def messages(_game_state, player, opponent) when is_nil(player) or is_nil(opponent), do: []
 
   def messages(game_state, player, opponent) do
     room_name = Game.room_by_players(game_state, player, opponent)
