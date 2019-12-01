@@ -6,7 +6,7 @@
 #     Mix.shell().cmd("npm install")
 #   end
 # end
-xo
+
 defmodule DumenuffBots.MixProject do
   use Mix.Project
 
