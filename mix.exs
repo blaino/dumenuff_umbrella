@@ -6,7 +6,7 @@ defmodule Mix.Tasks.UmbrellaNpmInstall do
     # Mix.shell().info("(Umbrella) Running npm install to get rivescript and its dependencies")
     # Mix.shell().cmd("cd apps/dumenuff_bots && npm install")
     Logger.info "(Umbrella) Running npm install to get rivescript and its dependencies"
-    System.cmd("npm", ["install"], cd: "apps/dumenuff_bots/node")
+    System.cmd("npm", ["install"], cd: "apps/dumenuff_bots/priv/node")
     Logger.info "npm install complete"
   end
 end
