@@ -39,6 +39,8 @@ environment :prod do
   set include_src: false
   set cookie: :"aDw5jFWG:ryxk76]ydCkFaabv$_/3k*$=MMTmC?;J?J*Pgh)ZF:;sxWVh=RP6I{D"
   set vm_args: "rel/vm.args"
+
+  set pre_start_hooks: "rel/hooks/pre_start"
 end
 
 # You may define one or more releases in this file.
@@ -55,4 +57,3 @@ release :dumenuff_umbrella do
     dumenuff_interface: :permanent
   ]
 end
-
