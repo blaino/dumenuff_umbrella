@@ -13,5 +13,7 @@ if mix help "${phoenix_ex}.digest.clean" 1>/dev/null 2>&1; then
 fi
 
 echo "++++++++++++++ running install from buildpack compile script"
+pwd
+ls *
 cd $bots_node_relative_path
 npm install
