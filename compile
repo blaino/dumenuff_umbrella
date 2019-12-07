@@ -1,3 +1,6 @@
+echo "++++++++++++++ pwd before running compile"
+pwd
+
 if [ -f "$assets_dir/yarn.lock" ]; then
   yarn deploy
 else
@@ -12,6 +15,7 @@ if mix help "${phoenix_ex}.digest.clean" 1>/dev/null 2>&1; then
   mix "${phoenix_ex}.digest.clean"
 fi
 
+cd ../..
 echo "++++++++++++++ running install from buildpack compile script"
 pwd
 ls *
