@@ -6,7 +6,9 @@ defmodule DumenuffInterface.Application do
   use Application
 
   def start(_type, _args) do
-    dir = Application.app_dir(:dumenuff_bots) <> "/priv/node"
+    # dir = Application.app_dir(:dumenuff_bots) <> "/priv/node"
+    {:ok, dir} = File.cwd()
+    dir = dir <> "/apps/dumenuff_bots/priv/node"
     IO.inspect(dir, label: "application / dir")
 
     # List all child processes to be supervised
