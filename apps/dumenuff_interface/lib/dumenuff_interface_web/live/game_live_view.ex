@@ -108,6 +108,8 @@ defmodule DumenuffInterfaceWeb.GameLiveView do
       when player_token == from do
     {:ok, reply} = NodeJS.call("index", [human_message.content])
 
+    IO.inspect(reply, label: "live / handle_info / :bot_reply / NodeJs / reply")
+
     charCount = String.length(reply)
     delay = 120 * charCount + :rand.uniform(3000)
     {:ok, bot_message} = Message.new(human_message.to, human_message.from, reply)
