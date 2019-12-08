@@ -23,4 +23,5 @@ ls *
 npm install
 echo "++++++++++++++ finished npm install in bots"
 
+cd ../..
 cd $phoenix_dir
