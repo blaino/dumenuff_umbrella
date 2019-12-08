@@ -5,7 +5,7 @@ defmodule DumenuffEngine.Rules do
             num_players: 0,
             players_to_start: 2,
             num_done: 0,
-            timer: 1000
+            timer: 60
 
   def new(), do: %Rules{}
 
