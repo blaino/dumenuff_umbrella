@@ -9,13 +9,6 @@ defmodule DumenuffInterface.Application do
     app_dir = Application.app_dir(:dumenuff_bots) <> "/priv/node"
     IO.inspect(app_dir, label: "application / app_dir")
 
-
-    {:ok, dir} = File.cwd()
-    dir = dir <> "/apps/dumenuff_bots/priv/node"
-    IO.inspect(dir, label: "application / dir")
-
-
-
     # List all child processes to be supervised
     children = [
       # Start the endpoint when the application starts
@@ -27,8 +20,7 @@ defmodule DumenuffInterface.Application do
         start: {
           NodeJS,
           :start_link,
-          # [[path: "apps/dumenuff_bots/priv/node", pool_size: 4]]
-          [[path: app_dir, pool_size: 4]]
+          [[path: app_dir, pool_size: 2]]
         }
       }
     ]
