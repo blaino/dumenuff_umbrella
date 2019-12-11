@@ -13,7 +13,7 @@
   <body>
     <header>
       <section class="container" style="display: flex;">
-        <h3>D U M E N U F F</h3>
+        <h3 style="letter-spacing: 0.8rem">DUMENUFF</h3>
       </section>
     </header>
     <main role="main" class="container">

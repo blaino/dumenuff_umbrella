@@ -32,7 +32,7 @@
                     <% end %>
                     <div class="form-group">
                         <%= form_for @message, "#", [phx_submit: :message], fn _f -> %>
-                            <%= text_input :message, :content, placeholder: "write your message here..." %>
+                            <%= text_input :message, :content, placeholder: "write your message here...", autocomplete: "off" %>
                             <%= hidden_input :message, :from, value: @player_token  %>
                             <%= hidden_input :message, :to, value: @current_room  %>
                         <% end %>
