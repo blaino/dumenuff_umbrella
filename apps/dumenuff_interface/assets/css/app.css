@@ -167,6 +167,14 @@ input {
 }
 
 .score-players {
+    position: relative;
     margin: 1em;
     padding: 0.1em 0.5em;
+}
+
+.total-score {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    font-size: 30px;
 }
