@@ -165,3 +165,8 @@ input {
 .room label:hover {
     background:#DDD;
 }
+
+.score-players {
+    margin: 1em;
+    padding: 0.1em 0.5em;
+}
