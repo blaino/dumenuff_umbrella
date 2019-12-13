@@ -36,9 +36,9 @@ defmodule DumenuffEngine.Game do
     GenServer.call(game, {:get_state})
   end
 
-  def add_player(game, name, ethnicity) when is_binary(name) and ethnicity in @ethnicities do
+  def add_player(game, name, ethnicity, real_name) when is_binary(name) and ethnicity in @ethnicities do
     IO.inspect(name, label: "game / add_player / name: ")
-    GenServer.call(game, {:add_player, name, ethnicity})
+    GenServer.call(game, {:add_player, name, ethnicity, real_name})
   end
 
   # TODO consider checking if room_name is in game.rooms
@@ -99,12 +99,12 @@ defmodule DumenuffEngine.Game do
     reply_success(state_data, :ok)
   end
 
-  def handle_call({:add_player, name, ethnicity}, _from, state_data) do
+  def handle_call({:add_player, name, ethnicity, real_name}, _from, state_data) do
     IO.inspect(name, label: "game / handle_call / :add_player / name: ")
     with {:ok, rules} <- Rules.check(state_data.rules, :add_player) do
       IO.puts("successfully added player")
       state_data
-      |> put_in_player(Player.new(ethnicity), name)
+      |> put_in_player(Player.new(ethnicity, real_name), name)
       |> update_rules(rules)
       |> check_players_set
       |> reply_success(:ok)
