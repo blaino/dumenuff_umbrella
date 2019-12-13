@@ -12,13 +12,11 @@ input {
 }
 
 .game-pane {
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
 }
 
 .top-pane {
-    border: 1px solid red;
     flex: auto;
 
     display: flex;
@@ -26,15 +24,11 @@ input {
 }
 
 .bottom-pane {
-    border: 1px solid red;
     flex: auto;
-
-
     display: flex;
 }
 
 .top-left-pane {
-    border: 1px solid red;
     flex: 0 1 auto;
     width: 10em;
 
@@ -44,13 +38,11 @@ input {
 }
 
 .top-right-pane {
-    border: 1px solid red;
     flex: auto;
     padding: 1em;
 }
 
 .bottom-left-pane {
-    border: 1px solid red;
     flex: 0 1 auto;
     width: 10em;
     display: flex;
@@ -59,9 +51,7 @@ input {
 }
 
 .bottom-right-pane {
-    border: 1px solid red;
     flex: auto;
-
     flex-direction: row;
     justify-content: center;
 }
