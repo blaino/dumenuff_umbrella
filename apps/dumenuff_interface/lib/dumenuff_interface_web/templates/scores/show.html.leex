@@ -6,7 +6,7 @@
         <h5>Game Over</h5>
     <% end %>
     <ul>
-        <%= for {name, player} <- @game.players do %>
+        <%= for {name, player} <- sort_by_score(@game.players) do %>
             <li class="score-players z-depth-1">
                 <h6><%= name %> is really <%= real_name(player) %></h6>
                 <ul>

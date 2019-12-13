@@ -11,17 +11,16 @@ defmodule DumenuffInterfaceWeb.ScoresView do
     player.real_name
   end
 
-  def score(%Player{scores: scores} = player) do
-    IO.inspect(scores, label: "scores")
-    4
+  def score(%Player{scores: scores} = _player) do
+    sum_scores(scores)
   end
 
   def sort_by_score(players) do
-    Enum.sort_by(players, sum_scores(Map.fetch(&1, :scores)))
+    {name, %Player{scores: scores} = player} = Enum.at(players, 0)
+    Enum.sort_by(players, fn {name, %Player{scores: scores}} = player -> -sum_scores(scores) end)
   end
 
   def sum_scores(scores) do
-    IO.inspect(scores, label: "sum_scores / scores")
     Enum.reduce(scores, 0, fn({_k, v}, acc) -> v + acc end)
   end
 end
