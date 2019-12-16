@@ -32,4 +32,10 @@ defmodule DumenuffInterfaceWeb.ScoresLiveView do
     {:noreply, socket}
   end
 
+  def handle_event("new_game", _, socket) do
+    {:noreply,
+     socket
+    |> redirect(to: DumenuffInterfaceWeb.Router.Helpers.lobby_path(DumenuffInterfaceWeb.Endpoint, :new))}
+  end
+
 end

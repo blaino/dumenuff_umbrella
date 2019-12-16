@@ -3,7 +3,10 @@
         <h5 class="waiting" >This game will be over in less than <%= @game.rules.timer %> seconds</h5>
     <% end %>
     <%= if @game.rules.state == :game_over do %>
-        <h5>Game Over</h5>
+    <div style="display: flex">
+      <h5 style="flex: auto">Game Over</h5>
+      <button style="flex: 0 1 20%" class="waves-effect waves-light btn-small red done-button" phx-click="new_game">Play again</button>
+    </div>
     <% end %>
     <ul>
         <%= for {name, player} <- sort_by_score(@game.players) do %>
