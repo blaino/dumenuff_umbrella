@@ -321,19 +321,20 @@ defmodule DumenuffEngine.Game do
 
   defp greet(game) do
     Enum.each(game.rooms, fn {room_name, room} ->
-      cond do
-        game.players[room.player1].ethnicity == :bot and
-            game.players[room.player2].ethnicity == :human ->
-          {:ok, message} = Message.new(room.player2, room.player1, "xxxgreetingxxx")
-          Phoenix.PubSub.broadcast!(@pubsub_name, game.registered_name, {:bot_reply, room_name, message})
+      if :rand.uniform > 0.55 do
+        cond do
+          game.players[room.player1].ethnicity == :bot and
+          game.players[room.player2].ethnicity == :human ->
+            {:ok, message} = Message.new(room.player2, room.player1, "xxxgreetingxxx")
+            Phoenix.PubSub.broadcast!(@pubsub_name, game.registered_name, {:bot_reply, room_name, message})
 
-        game.players[room.player1].ethnicity == :human and
-            game.players[room.player2].ethnicity == :bot ->
-          {:ok, message} = Message.new(room.player1, room.player2, "xxxgreetingxxx")
-          Phoenix.PubSub.broadcast!(@pubsub_name, game.registered_name, {:bot_reply, room_name, message})
-
-        true ->
-          "blah"
+            game.players[room.player1].ethnicity == :human and
+          game.players[room.player2].ethnicity == :bot ->
+            {:ok, message} = Message.new(room.player1, room.player2, "xxxgreetingxxx")
+            Phoenix.PubSub.broadcast!(@pubsub_name, game.registered_name, {:bot_reply, room_name, message})
+          true ->
+            "blah"
+        end
       end
     end)
   end

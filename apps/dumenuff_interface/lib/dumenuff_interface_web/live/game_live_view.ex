@@ -111,7 +111,10 @@ defmodule DumenuffInterfaceWeb.GameLiveView do
     IO.inspect(reply, label: "live / handle_info / :bot_reply / NodeJs / reply")
 
     charCount = String.length(reply)
-    delay = 120 * charCount + :rand.uniform(3000)
+
+    num_players_proxy = 10
+
+    delay = 120 * charCount + (:rand.uniform(3000) * num_players_proxy)
     {:ok, bot_message} = Message.new(human_message.to, human_message.from, reply)
 
     Process.send_after(self(), {:bot_reply_delay, room_name, bot_message}, delay)
