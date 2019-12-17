@@ -30,16 +30,16 @@
                         </p>
                     <% end %>
                     <div class="form-group">
-                        <%= form_for @message, "#", [phx_submit: :message], fn _f -> %>
-                            <%= text_input :message, :content, placeholder: "write your message here...", autocomplete: "off" %>
-                            <%= hidden_input :message, :from, value: @player_token  %>
-                            <%= hidden_input :message, :to, value: @current_room  %>
-                        <% end %>
+                      <%= form_for @message, "#", [phx_submit: :message], fn _f -> %>
+                        <%= text_input :message, :content, placeholder: "write your message here...", autocomplete: "off", class: "form-control blue-grey-text text-lighten-5" %>
+                        <%= hidden_input :message, :from, value: @player_token  %>
+                        <%= hidden_input :message, :to, value: @current_room  %>
+                      <% end %>
                     </div>
                 </div>
             </div>
             <div class="bottom-pane">
-                <div class="bottom-left-pane">
+              <div class="bottom-left-pane">
                     <button class="waves-effect waves-light btn-large red done-button" phx-click="done">DONE</button>
                 </div>
                 <div class="bottom-right-pane">
