@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
-  <body>
+  <body class="blue-grey darken-4 blue-grey-text text-lighten-5">
     <header>
       <section class="container" style="display: flex;">
         <h3 style="letter-spacing: 0.8rem">DUMENUFF</h3>

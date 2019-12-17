@@ -1,15 +1,17 @@
 <div>
-  <h4>Wanna play?</h4>
-  <div class="form">
-    <%= form_for @conn, Routes.lobby_path(@conn, :create), [as: :player], fn f -> %>
-      <div class="input-group">
-        <%= text_input f, :name, placeholder: "game name", autofocus: true, class: "form-control", autocomplete: "off" %>
-        <%= text_input f, :real_name, placeholder: "real name (for the scoreboard)", autofocus: true, class: "form-control", autocomplete: "off" %>
-        <span class="input-group-btn">
-          <%= submit "Enter", class: "btn btn-primary" %>
-        </span>
-      </div>
-    <% end %>
-    <img style="width: 60em; height: 50em" src="images/cuteRobot.png" />
+  <div class="form" style="display: flex; flex-wrap: wrap; justify-content: center">
+    <div style="flex: 1 1 auto;">
+      <h4>Wanna play?</h4>
+      <%= form_for @conn, Routes.lobby_path(@conn, :create), [as: :player], fn f -> %>
+        <div class="input-group">
+          <%= text_input f, :name, placeholder: "game name", autofocus: true, class: "form-control", autocomplete: "off" %>
+          <%= text_input f, :real_name, placeholder: "real name (for the scoreboard)", autofocus: true, class: "form-control", autocomplete: "off" %>
+          <span class="input-group-btn">
+            <%= submit "Enter", class: "btn btn-primary" %>
+          </span>
+        </div>
+      <% end %>
+    </div>
+    <img style="flex: 0 1" src="images/cuteRobot3.png" />
     </div>
 </div>

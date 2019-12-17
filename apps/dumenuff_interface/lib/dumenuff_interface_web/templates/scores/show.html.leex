@@ -5,7 +5,7 @@
     <%= if @game.rules.state == :game_over do %>
     <div style="display: flex">
       <h5 style="flex: auto">Game Over</h5>
-      <button style="flex: 0 1 20%" class="waves-effect waves-light btn-small red done-button" phx-click="new_game">Play again</button>
+      <button style="flex: 0 1 20%" class="waves-effect waves-light btn-small" phx-click="new_game">Play again</button>
     </div>
     <% end %>
     <ul>
